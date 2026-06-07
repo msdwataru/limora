@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "limora-moodboard"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
