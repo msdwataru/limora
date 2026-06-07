@@ -112,6 +112,15 @@
         "padding_bottom": 12
       }
     },
+    "limora_styling": {
+      "type": "limora-product-styling",
+      "settings": {
+        "heading": "Style it together",
+        "text": "<p>同じリネン素材のアイテムを組み合わせて、柔らかく上品な日常コーディネートに。<\/p>",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "image-with-text": {
       "type": "image-with-text",
       "blocks": {
@@ -209,6 +218,7 @@
   },
   "order": [
     "main",
+    "limora_styling",
     "image-with-text",
     "multicolumn",
     "related-products"

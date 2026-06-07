@@ -1,0 +1,150 @@
+<div class="limora-lookbook page-width">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="limora-lookbook__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.text != blank -%}
+    <div class="limora-lookbook__text">{{ section.settings.text }}</div>
+  {%- endif -%}
+
+  <ul class="limora-lookbook__grid">
+    <li class="limora-lookbook__item">
+      <img
+        src="{{ 'limora-look-blouse.png' | asset_url }}"
+        alt="エアリーリネン ボリュームブラウス"
+        loading="lazy"
+        width="600"
+        height="338"
+      >
+      <p class="limora-lookbook__item-title">エアリーリネン ボリュームブラウス</p>
+      <p class="limora-lookbook__item-copy">「朝、袖を通した瞬間に、心がすっと軽くなる。そんな一日を、やさしいリネンとともに。」</p>
+      <p class="limora-lookbook__item-text">洗うたびに肌に柔らかく馴染むオーガニックリネンを100%使用。甘すぎないボリュームスリーブが気になる腕まわりをカバーしながら、都会的な抜け感を演出します。</p>
+    </li>
+    <li class="limora-lookbook__item">
+      <img
+        src="{{ 'limora-look-blazer.png' | asset_url }}"
+        alt="リラックスリネン テーラードブレザー"
+        loading="lazy"
+        width="600"
+        height="338"
+      >
+      <p class="limora-lookbook__item-title">リラックスリネン テーラードブレザー</p>
+      <p class="limora-lookbook__item-copy">「肩の力を抜いても、きちんと見える。そんな自分を後押ししてくれる、頼れる一枚。」</p>
+      <p class="limora-lookbook__item-text">柔らかな質感のリネン混素材で、オンの日もオフの日も心地よく羽織れる一枚。ベージュの落ち着いた色味が、どんなコーディネートにもなじみます。</p>
+    </li>
+    <li class="limora-lookbook__item">
+      <img
+        src="{{ 'limora-look-trousers.png' | asset_url }}"
+        alt="ソフトコットン テーパードスラックス"
+        loading="lazy"
+        width="600"
+        height="338"
+      >
+      <p class="limora-lookbook__item-title">ソフトコットン テーパードスラックス</p>
+      <p class="limora-lookbook__item-copy">「きちんと見えするのに、心地よさはパジャマのまま。リモートワークにも寄り添う美シルエット。」</p>
+      <p class="limora-lookbook__item-text">ストレッチ性を備えた上質なオーガニックコットン素材。美しいテーパードラインが脚長効果を発揮しつつ、ウエストは後ろゴム仕様でストレスフリーな履き心地です。</p>
+    </li>
+  </ul>
+</div>
+
+{% style %}
+  .limora-lookbook {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .limora-lookbook__heading {
+    text-align: center;
+    color: #4A3F35;
+    margin: 0 0 1.2rem;
+  }
+
+  .limora-lookbook__text {
+    max-width: 48rem;
+    margin: 0 auto 4rem;
+    text-align: center;
+    color: #6B5B4D;
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .limora-lookbook__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 2.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .limora-lookbook__item img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.2rem;
+    display: block;
+  }
+
+  .limora-lookbook__item-title {
+    margin: 1.4rem 0 0.6rem;
+    font-size: 1.6rem;
+    color: #4A3F35;
+  }
+
+  .limora-lookbook__item-copy {
+    margin: 0 0 0.8rem;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #6B5B4D;
+    line-height: 1.7;
+  }
+
+  .limora-lookbook__item-text {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #6B5B4D;
+    line-height: 1.7;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "LIMORA ルックブック",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "朝の5分に、心の余裕を"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "本文",
+      "default": "<p>トレンドを程よく取り入れつつも、飽きがこず、長くお気に入りの一着としてクローゼットに残るタイムレスなデザイン。柔らかな質感とアースカラーで、毎日のコーディネートに心地よい風を届けます。</p>"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上の余白",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "下の余白",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "LIMORA ルックブック"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,128 @@
+<div class="limora-styling page-width">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="limora-styling__heading">{{ section.settings.heading }}</h2>
+  {%- endif -%}
+  {%- if section.settings.text != blank -%}
+    <div class="limora-styling__text">{{ section.settings.text }}</div>
+  {%- endif -%}
+
+  <ul class="limora-styling__grid">
+    <li class="limora-styling__item">
+      <img
+        src="{{ 'limora-look-blouse.png' | asset_url }}"
+        alt="ウィメンズ リネン ブラウス（オフホワイト）"
+        loading="lazy"
+        width="600"
+        height="338"
+      >
+      <p class="limora-styling__item-title">リネン ブラウス（オフホワイト）</p>
+    </li>
+    <li class="limora-styling__item">
+      <img
+        src="{{ 'limora-look-blazer.png' | asset_url }}"
+        alt="ウィメンズ リネン ブレザー（ベージュ）"
+        loading="lazy"
+        width="600"
+        height="338"
+      >
+      <p class="limora-styling__item-title">リネン ブレザー（ベージュ）</p>
+    </li>
+    <li class="limora-styling__item">
+      <img
+        src="{{ 'limora-look-trousers.png' | asset_url }}"
+        alt="ウィメンズ リネン トラウザーズ（ベージュ）"
+        loading="lazy"
+        width="600"
+        height="338"
+      >
+      <p class="limora-styling__item-title">リネン トラウザーズ（ベージュ）</p>
+    </li>
+  </ul>
+</div>
+
+{% style %}
+  .limora-styling {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+
+  .limora-styling__heading {
+    color: #4A3F35;
+    margin: 0 0 1rem;
+  }
+
+  .limora-styling__text {
+    max-width: 56rem;
+    margin: 0 0 3.2rem;
+    color: #6B5B4D;
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  .limora-styling__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .limora-styling__item img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    display: block;
+  }
+
+  .limora-styling__item-title {
+    margin: 1rem 0 0;
+    font-size: 1.4rem;
+    color: #4A3F35;
+    text-align: center;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "LIMORA スタイリング提案",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "Style it together"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "本文",
+      "default": "<p>同じリネン素材のアイテムを組み合わせて、柔らかく上品な日常コーディネートに。</p>"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "上の余白",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "下の余白",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "LIMORA スタイリング提案"
+    }
+  ]
+}
+{% endschema %}

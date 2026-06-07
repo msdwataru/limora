@@ -1,5 +1,25 @@
 {
   "sections": {
+    "limora_hero": {
+      "type": "limora-hero",
+      "settings": {
+        "heading": "LIMORA",
+        "text": "<p>忙しい毎日に、そっと寄り添う余白を。韓国カジュアル × ナチュラルテイストのデイリーウェア、LIMORA。</p>",
+        "button_label": "コレクションを見る",
+        "button_link": "shopify://collections/all",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "limora_lookbook": {
+      "type": "limora-lookbook",
+      "settings": {
+        "heading": "朝の5分に、心の余裕を",
+        "text": "<p>トレンドを程よく取り入れつつも、飽きがこず、長くお気に入りの一着としてクローゼットに残るタイムレスなデザイン。柔らかな質感とアースカラーで、毎日のコーディネートに心地よい風を届けます。</p>",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -200,6 +220,8 @@
     }
   },
   "order": [
+    "limora_hero",
+    "limora_lookbook",
     "image_banner",
     "rich_text",
     "featured_collection",
