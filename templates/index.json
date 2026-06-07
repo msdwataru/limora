@@ -12,7 +12,7 @@
     "limora_hero": {
       "type": "limora-hero",
       "settings": {
-        "heading": "LIMORA",
+        "heading": "",
         "text": "<p>忙しい毎日に、そっと寄り添う余白を。韓国カジュアル × ナチュラルテイストのデイリーウェア、LIMORA。</p>",
         "button_label": "コレクションを見る",
         "button_link": "shopify://collections/all",
