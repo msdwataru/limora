@@ -7,7 +7,7 @@
   {%- endif -%}
 
   <ul class="limora-lookbook__grid">
-    <li class="limora-lookbook__item">
+    <li class="limora-lookbook__item{% if settings.animations_reveal_on_scroll %} scroll-trigger limora-lookbook__reveal{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade{% endif %}>
       <img
         src="{{ 'limora-look-blouse.png' | asset_url }}"
         alt="エアリーリネン ボリュームブラウス"
@@ -19,7 +19,7 @@
       <p class="limora-lookbook__item-copy">「朝、袖を通した瞬間に、心がすっと軽くなる。そんな一日を、やさしいリネンとともに。」</p>
       <p class="limora-lookbook__item-text">洗うたびに肌に柔らかく馴染むオーガニックリネンを100%使用。甘すぎないボリュームスリーブが気になる腕まわりをカバーしながら、都会的な抜け感を演出します。</p>
     </li>
-    <li class="limora-lookbook__item">
+    <li class="limora-lookbook__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade{% endif %}>
       <img
         src="{{ 'limora-look-blazer.png' | asset_url }}"
         alt="リラックスリネン テーラードブレザー"
@@ -31,7 +31,7 @@
       <p class="limora-lookbook__item-copy">「肩の力を抜いても、きちんと見える。そんな自分を後押ししてくれる、頼れる一枚。」</p>
       <p class="limora-lookbook__item-text">柔らかな質感のリネン混素材で、オンの日もオフの日も心地よく羽織れる一枚。ベージュの落ち着いた色味が、どんなコーディネートにもなじみます。</p>
     </li>
-    <li class="limora-lookbook__item">
+    <li class="limora-lookbook__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade{% endif %}>
       <img
         src="{{ 'limora-look-trousers.png' | asset_url }}"
         alt="ソフトコットン テーパードスラックス"
@@ -101,6 +101,32 @@
     font-size: 1.3rem;
     color: #6B5B4D;
     line-height: 1.7;
+  }
+
+  .limora-lookbook__reveal {
+    opacity: 0;
+    transform: translateY(5rem) scale(0.94);
+    filter: blur(6px);
+    transition:
+      opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 1.1s ease-out;
+    transition-delay: calc(var(--animation-order, 0) * 140ms);
+  }
+
+  .limora-lookbook__reveal.scroll-trigger:not(.scroll-trigger--offscreen) {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .limora-lookbook__reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      transition: none;
+    }
   }
 {% endstyle %}
 
